@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Title from './comps/Title.js'
+import UploadForm from './comps/UploadForm.js'
+import ImageGrid from './comps/ImageGrid.js'
+import Model from './comps/Model.js'
 
-function App() {
+const App = () => {
+  const [selectdImg, setSelectedImg] = useState(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Title />
+      <UploadForm />
+      <ImageGrid setSelectedImg={setSelectedImg} />
+      { selectdImg && <Model selectdImg={selectdImg} setSelectedImg={setSelectedImg} /> }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
