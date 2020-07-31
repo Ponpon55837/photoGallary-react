@@ -14,13 +14,17 @@ const ImageGrid = ({ setSelectedImg }) => {
           <motion.div
             className='img-wrap'
             layout
-            whileHover={{ opacity: 1 }}
+            whileHover={{ opacity: 1, scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setSelectedImg(doc.url)}>
             <motion.img
               src={doc.url}
               alt='upload pic'
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 1,
+                scale: [1, 2, 2, 1, 1],
+                rotate: [0, 0, 270, 270, 0],
+                borderRadius: ["0%", "66%", "100%", "33%", "0%"], }}
               tramsition={{ delay: 1 }} />
           </motion.div>
         </Col>

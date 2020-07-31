@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar.js'
+import { motion } from 'framer-motion'
 
 const UploadForm = () => {
   // 設定初始的file為空
@@ -28,10 +29,17 @@ const UploadForm = () => {
 
   return (
     <form>
-      <label>
-        <input type='file' onChange={changeHandler} />
-        <span>+</span>
-      </label>
+      <motion.div
+        animate={{
+          scale: [1, 2, 3, 2, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ["20%", "50%", "100%", "100%", "20%"],
+        }}>
+        <label>
+          <input type='file' onChange={changeHandler} />
+          <span>+</span>
+        </label>
+      </motion.div>
       <div className='output'>
         { error && <div className='error'>{error}</div> }
         { file && <ProgressBar file={file} setFile={setFile} /> }
