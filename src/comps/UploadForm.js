@@ -7,7 +7,7 @@ const UploadForm = () => {
   const [file, setFile] = useState(null)
   const [error, setError] =useState(null)
 
-  const types = ['image/png', 'image/jpeg']
+  const types = ['image/png', 'image/jpeg', 'image/gif']
 
   const changeHandler = (e) => {
     // 抓取放入陣列的第一筆資料內容

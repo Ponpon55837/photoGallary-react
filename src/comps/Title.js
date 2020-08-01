@@ -10,7 +10,7 @@ const Title = () => {
         FireGram
       </h1>
       <h2>Your Pictures</h2>
-      <p>Lorm ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Add Your Pictures into this Firebase Database.</p>
     </motion.div>
   )
 }
