@@ -6,13 +6,13 @@ import 'firebase/firestore'
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyCJ3n1v2IElXMJXQjUzVDSupqSwS1p-dZA",
-  authDomain: "whattalk-745a6.firebaseapp.com",
-  databaseURL: "https://whattalk-745a6.firebaseio.com",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
   projectId: "whattalk-745a6",
-  storageBucket: "whattalk-745a6.appspot.com",
-  messagingSenderId: "159446944969",
-  appId: "1:159446944969:web:062be4bcbe2e0f027b9118"
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
